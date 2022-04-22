@@ -1,0 +1,19 @@
+create or replace function jsum(x in number,y in number)
+return number as
+z number;
+begin
+z:=x+y;
+return z;
+end;
+/
+declare
+a number;
+b number;
+c number;
+begin
+a:=&a;
+b:=&b;
+c:=jsum(a,b);
+dbms_output.put_line('Sum ' || c);
+end;
+/
